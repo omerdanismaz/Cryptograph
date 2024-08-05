@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Update Note</h2>
+
+        <div class="column">
+            <form id="note-form" method="POST" th:action="@{/updateNoteProcess}">
+                <input id="csrf-token" type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input id="note-id" type="hidden" name="noteId" th:value="${noteId}">
+
+                <div>
+                    <h4>Note Name</h4>
+                    <input id="note-name" type="text" name="newNoteName" th:value="${noteName}">
+                </div>
+
+                <div>
+                    <h4>Note Content</h4>
+                    <textarea id="note-content" name="newNoteContent" rows="10" cols="30" th:text="${noteContent}"></textarea>
+                </div>
+
+                <div class="row">
+                    <button type="submit">SAVE</button>
+                    <a href="/notes"><button type="button">CANCEL</button></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+
+        <script th:inline="javascript">
+            var messageOne = /*[[${messageOne}]]*/ "EMPTY";
+            var messageTwo = /*[[${messageTwo}]]*/ "EMPTY";
+            var messageThree = /*[[${messageThree}]]*/ "EMPTY";
+        </script>
+
+        <script src="/js/addNote.js"></script>
+    </div>
+</body>
+</html>

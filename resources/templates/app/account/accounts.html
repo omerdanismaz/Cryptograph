@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Accounts</h2>
+
+        <a href="/addAccount"><button>Add Account</button></a>
+
+        <div th:each="decryptedAccount: ${decryptedAccounts}">
+            <form method="POST" th:action="@{/viewAccount}">
+                <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input type="hidden" name="accountId" th:value="${decryptedAccount.dbfAccountId}"/>
+
+                <div class="row element-info">
+                    <button type="submit">View</button>
+                    <h3 th:text="${decryptedAccount.dbfAccountName}"></h3>
+                </div>
+            </form>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+    </div>
+</body>
+</html>

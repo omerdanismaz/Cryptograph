@@ -1,0 +1,133 @@
+*
+{
+    margin: 0vh;
+    padding: 0vh;
+    user-select: none;
+    font-family: Arial;
+}
+
+body
+{
+    width: fit-content;
+    height: fit-content;
+    padding: 2vh;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+input
+{
+    border: none;
+    outline: none;
+    background-color: #606060;
+    color: #FFFFFF;
+    padding: 1vh;
+}
+
+input::placeholder
+{
+    color: #FFFFFF;
+}
+
+button
+{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: large;
+    background-color: #202020;
+    color: #FFFFFF;
+    width: fit-content;
+    padding: 1vh;
+}
+
+button:hover
+{
+    background-color: #353535;
+}
+
+a
+{
+    color: #000000;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+textarea
+{
+    width: 40vh;
+    height: 10vh;
+    resize: none;
+    outline: none;
+    font-size: medium;
+    padding: 0.5vh;
+    border: solid #202020 0.1vh;
+}
+
+.profile-button-group button
+{
+    width: 100%;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.column.profile-info
+{
+    gap: 1vh;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.prototype
+{
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+}
+
+.information-message
+{
+    position: fixed;
+    bottom: 2vh;
+    left: 2vh;
+}
+
+.navigation
+{
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+}
+
+.element-info
+{
+    align-items: center;
+}
+
+.selectable
+{
+    user-select: text;
+}

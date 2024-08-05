@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Profile</h2>
+
+        <div class="column profile-info">
+            <h4 th:text="${sessionUserFullName}"></h4>
+            <p th:text="${sessionUserEmail}"></p>
+        </div>
+
+        <div class="column profile-button-group">
+            <div class="column">
+                <form method="POST" th:action="@{/terminateAllSessions}">
+                    <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                    <button type="submit">Terminate All Sessions</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+    </div>
+</body>
+</html>

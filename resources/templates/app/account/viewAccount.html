@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Account Details</h2>
+
+        <div class="column">
+            <div>
+                <h4>Account Name</h4>
+                <p class="selectable" th:text="${accountName}"></p>
+            </div>
+
+            <div>
+                <h4>Account Username</h4>
+                <p class="selectable" th:text="${accountUsername}"></p>
+            </div>
+
+            <div>
+                <h4>Account Password</h4>
+                <p class="selectable" th:text="${accountPassword}"></p>
+            </div>
+
+            <div>
+                <h4>Account Created On</h4>
+                <p th:text="${accountCreatedOn}"></p>
+            </div>
+
+            <div>
+                <h4>Account Updated On</h4>
+                <p th:text="${accountUpdatedOn}"></p>
+            </div>
+
+            <form method="POST" th:action="@{/updateAccount}">
+                <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input type="hidden" name="accountId" th:value="${accountId}">
+
+                <button type="submit">UPDATE ACCOUNT</button>
+            </form>
+
+            <form method="POST" th:action="@{/deleteAccount}">
+                <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input type="hidden" name="accountId" th:value="${accountId}">
+
+                <button type="submit">DELETE ACCOUNT</button>
+            </form>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+    </div>
+</body>
+</html>

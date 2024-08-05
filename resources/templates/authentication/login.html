@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <div class="column">
+        <h2>Login</h2>
+
+        <form id="authentication-form" method="POST" th:action="@{/login}">
+            <input id="csrf-token" type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+
+            <input id="email" type="text" name="email" placeholder="Email Address">
+
+            <input id="password" type="password" name="password" placeholder="Password">
+
+            <button type="submit">LOGIN</button>
+        </form>
+
+        <a href="/register">Register</a>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+
+        <script th:inline="javascript">
+            var messageOne = /*[[${messageOne}]]*/ "EMPTY";
+            var messageTwo = /*[[${messageTwo}]]*/ "EMPTY";
+            var messageThree = /*[[${messageThree}]]*/ "EMPTY";
+            var messageFour = /*[[${messageFour}]]*/ "EMPTY";
+        </script>
+
+        <script src="/js/login.js"></script>
+    </div>
+</body>
+</html>

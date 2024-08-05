@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <div>
+            <h2>Cookie User ID</h2>
+            <p th:text="${cookieUserId}"></p>
+        </div>
+
+        <div>
+            <h2>Cookie User Encryption Key</h2>
+            <p th:text="${cookieUserEncryptionKey}"></p>
+        </div>
+
+        <div>
+            <h2>Cookie Session Token</h2>
+            <p th:text="${cookieSessionToken}"></p>
+        </div>
+
+        <div>
+            <h2>Session User ID</h2>
+            <p th:text="${sessionUserId}"></p>
+        </div>
+
+        <div>
+            <h2>Session User First Name</h2>
+            <p th:text="${sessionUserFirstName}"></p>
+        </div>
+
+        <div>
+            <h2>Session User Last Name</h2>
+            <p th:text="${sessionUserLastName}"></p>
+        </div>
+
+        <div>
+            <h2>Session User Email</h2>
+            <p th:text="${sessionUserEmail}"></p>
+        </div>
+
+        <div>
+            <h2>Session User Encryption Key</h2>
+            <p th:text="${sessionUserEncryptionKey}"></p>
+        </div>
+
+        <div>
+            <h2>Session User Status</h2>
+            <p th:text="${sessionUserStatus}"></p>
+        </div>
+
+        <div>
+            <h2>Session CSRF Token</h2>
+            <p th:text="${sessionCSRFToken}"></p>
+        </div>
+    </div>
+</body>
+</html>

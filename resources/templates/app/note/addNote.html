@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Add Note</h2>
+
+        <form id="note-form" method="POST" th:action="@{/addNote}">
+            <input id="csrf-token" type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+
+            <input id="note-name" type="text" name="noteName" placeholder="Note Name">
+
+            <textarea id="note-content" maxlength="1024" name="noteContent" placeholder="Note Content"></textarea>
+
+            <button type="submit">SAVE</button>
+        </form>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+
+        <script th:inline="javascript">
+            var messageOne = /*[[${messageOne}]]*/ "EMPTY";
+            var messageTwo = /*[[${messageTwo}]]*/ "EMPTY";
+        </script>
+
+        <script src="/js/addNote.js"></script>
+    </div>
+</body>
+</html>

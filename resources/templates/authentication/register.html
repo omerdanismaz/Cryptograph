@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <div class="column">
+        <h2>Register</h2>
+
+        <form id="authentication-form" method="POST" th:action="@{/register}">
+            <input id="csrf-token" type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+
+            <input id="first-name" type="text" name="firstName" placeholder="First Name">
+
+            <input id="last-name" type="text" name="lastName" placeholder="Last Name">
+
+            <input id="email" type="text" name="email" placeholder="Email Address">
+
+            <input id="password" type="password" name="password" placeholder="Password">
+
+            <input id="confirm-password" type="password" name="confirmPassword" placeholder="Confirm Password">
+
+            <button type="submit">REGISTER</button>
+        </form>
+
+        <a href="/login">Login</a>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+
+        <script th:inline="javascript">
+            var messageOne = /*[[${messageOne}]]*/ "EMPTY";
+            var messageTwo = /*[[${messageTwo}]]*/ "EMPTY";
+            var messageThree = /*[[${messageThree}]]*/ "EMPTY";
+            var messageFour = /*[[${messageFour}]]*/ "EMPTY";
+            var messageFive = /*[[${messageFive}]]*/ "EMPTY";
+            var messageSix = /*[[${messageSix}]]*/ "EMPTY";
+            var messageSeven = /*[[${messageSeven}]]*/ "EMPTY";
+            var messageEight = /*[[${messageEight}]]*/ "EMPTY";
+            var messageNine = /*[[${messageNine}]]*/ "EMPTY";
+        </script>
+
+        <script src="/js/register.js"></script>
+    </div>
+</body>
+</html>

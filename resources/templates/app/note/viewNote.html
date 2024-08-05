@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Note Details</h2>
+
+        <div class="column">
+            <div>
+                <h4>Note Name</h4>
+                <p class="selectable" th:text="${noteName}"></p>
+            </div>
+
+            <div>
+                <h4>Note Content</h4>
+                <textarea readonly th:text="${noteContent}"></textarea>
+            </div>
+
+            <div>
+                <h4>Note Created On</h4>
+                <p th:text="${noteCreatedOn}"></p>
+            </div>
+
+            <div>
+                <h4>Note Updated On</h4>
+                <p th:text="${noteUpdatedOn}"></p>
+            </div>
+
+            <form method="POST" th:action="@{/updateNote}">
+                <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input type="hidden" name="noteId" th:value="${noteId}">
+
+                <button type="submit">UPDATE NOTE</button>
+            </form>
+
+            <form method="POST" th:action="@{/deleteNote}">
+                <input type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input type="hidden" name="noteId" th:value="${noteId}">
+
+                <button type="submit">DELETE NOTE</button>
+            </form>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--suppress HtmlUnknownTarget, HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <title>Cryptograph</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Update Account</h2>
+
+        <div class="column">
+            <form id="account-form" method="POST" th:action="@{/updateAccountProcess}">
+                <input id="csrf-token" type="hidden" name="CSRFToken" th:value="${CSRFToken}">
+                <input id="account-id" type="hidden" name="accountId" th:value="${accountId}">
+
+                <div>
+                    <h4>Account Name</h4>
+                    <input id="account-name" type="text" name="newAccountName" th:value="${accountName}">
+                </div>
+
+                <div>
+                    <h4>Account Username</h4>
+                    <input id="account-username" type="text" name="newAccountUsername" th:value="${accountUsername}">
+                </div>
+
+                <div>
+                    <h4>Account Password</h4>
+                    <input id="account-password" type="text" name="newAccountPassword" th:value="${accountPassword}">
+                </div>
+
+                <div class="row">
+                    <button type="submit">SAVE</button>
+                    <a href="/"><button type="button">CANCEL</button></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="navigation">
+            <div class="row">
+                <a href="/">Accounts</a>
+                <a href="/notes">Notes</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <h4 class="information-message hidden" id="information-message"></h4>
+
+        <h4 class="prototype">PROTOTYPE</h4>
+
+        <script th:inline="javascript">
+            var messageOne = /*[[${messageOne}]]*/ "EMPTY";
+            var messageTwo = /*[[${messageTwo}]]*/ "EMPTY";
+            var messageThree = /*[[${messageThree}]]*/ "EMPTY";
+        </script>
+
+        <script src="/js/addAccount.js"></script>
+    </div>
+</body>
+</html>
